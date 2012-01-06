@@ -6,7 +6,7 @@ local Session = require 'bamboo.session'
 -- local pic = require 'lib.pic'
 local Image = require 'bamboo.models.image'
 local Upload = require 'bamboo.models.upload'
---local getpy = require 'app.py'
+local getpy = require 'app.py'
 
 local function _admin_param_(a, e)
 	print('admin checking params')
@@ -168,7 +168,6 @@ local function filter(web, req, e)
 		-- ['=endsWith'] = 'Ends with',
 		-- ['=unendsWith'] = 'Does not end with',
 	}
-	e.numPerPage = e.numPerPage or 20
 
 	local filter_param = ('_ADMIN_FILTER_PARAMS_={%s%s("%s")}'):format(e.filterField or '', e.operator or '', e.value or '')
 	-- print('filter_param:', filter_param)
